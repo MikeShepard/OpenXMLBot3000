@@ -4,11 +4,14 @@ import-module OpenXMLBot3000 -force
 $doc=WordDocument 'c:\temp\testdoc.docx' {
     Body {
         Paragraph {
-            Run {
-                Text 'Hello World'
+             Run {
+                RunProperties {
+                    Underline DashDotHeavy
+                }
+                   Text 'Hello World'
             }
         }
     }
 } 
 
-$doc.o.Close()
+$doc.o.Close() 

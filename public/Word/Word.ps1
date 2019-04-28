@@ -221,7 +221,43 @@ function Bold {
     $c = OpenXMLItem Bold
     [pscustomobject]@{type = 'Bold'; O = $c}
 }
+function Italic {
+    Param()
+    $c = OpenXMLItem Italic
+    [pscustomobject]@{type = 'Italic'; O = $c}
+}
+function Strike {
+    Param()
+    $c = OpenXMLItem Strike
+    [pscustomobject]@{type = 'Strike'; O = $c}
+}
+function SmallCaps {
+    Param()
+    $c = OpenXMLItem SmallCaps
+    [pscustomobject]@{type = 'SmallCaps'; O = $c}
+}
+
+function Caps{
+    Param()
+    $c = OpenXMLItem Caps
+    [pscustomobject]@{type = 'Caps'; O = $c}
+}
   
+function Outline{
+    Param()
+    $c = OpenXMLItem Outline
+    [pscustomobject]@{type = 'Outline'; O = $c}
+}
+
+function Underline {
+    [CmdletBinding()]
+    Param([UnderlineValues]$style='Single')
+    $c = OpenXMLItem Underline 
+    if ($style) {
+        $c.val = $style
+    }
+    [pscustomobject]@{type = 'Underline'; O = $c}
+}
 function PageBreakBefore {
     Param()
     $c = OpenXMLItem PageBreakBefore
